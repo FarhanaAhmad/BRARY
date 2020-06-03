@@ -11,7 +11,7 @@ const transporter = nodemailer.createTransport(
   sendgridTransport({
     auth: {
       api_key:
-        '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'
+      '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'
     }
   })
 );
@@ -153,12 +153,12 @@ exports.postSignup = (req, res, next) => {
     })
     .then(result => {
       res.redirect('/login');
-      // return transporter.sendMail({
-      //   to: email,
-      //   from: 'shop@node-complete.com',
-      //   subject: 'Signup succeeded!',
-      //   html: '<h1>You successfully signed up!</h1>'
-      // });
+      return transporter.sendMail({
+        to: email,
+       from: 'fgm199703@gmail.com',
+       subject: 'Signup succeeded!',
+       html: '<h1>You successfully signed up! in brary shop</h1>'
+       });
     })
     .catch(err => {
       const error = new Error(err);
@@ -209,10 +209,10 @@ exports.postReset = (req, res, next) => {
         res.redirect('/');
         transporter.sendMail({
           to: req.body.email,
-          from: 'shop@node-complete.com',
+          from: 'fgm199703@gmail.com',
           subject: 'Password reset',
           html: `
-            <p>You have requested a password reset</p>
+            <p>You requested a password reset</p>
             <p>Click this <a href="http://localhost:3000/reset/${token}">link</a> to set a new password.</p>
           `
         });
