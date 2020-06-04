@@ -1,13 +1,14 @@
 .product-form {
-    width: 20rem;
-    max-width: 90%;
+    width: 100rem;
+    max-width: 95%;
     margin: auto;
     display: block;
 }
 
 .product-item {
-    width: 20rem;
-    max-width: 95%;
+    width: 40rem;
+    max-width: 50%;
+    box-shadow: 0 50px 100px rgb(240, 243, 90);
     margin: 1rem;
 }
 
@@ -18,7 +19,7 @@
 
 .product__price {
     text-align: center;
-    color: #4d4d4d;
+    color: #490606;
     margin-bottom: 0.5rem;
 }
 
