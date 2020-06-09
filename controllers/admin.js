@@ -38,6 +38,8 @@ exports.postAddProduct = (req, res, next) => {
     });
   }
   const errors = validationResult(req);
+  let message = req.flash('error');
+  if (message.length > 0) {
 
   if (!errors.isEmpty()) {
     console.log(errors.array());
