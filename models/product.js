@@ -24,10 +24,6 @@ const productSchema = new Schema({
     ref: 'User',
     required: true
   }
-  user: {
-    email: {
-      type: String,
-      required: true
 });
 
 module.exports = mongoose.model('Product', productSchema);

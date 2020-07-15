@@ -32,7 +32,7 @@ router.post(
 );
 
 router.get('/edit-product/:productId', isAuth, adminController.getEditProduct);
-router.get('/add-product', isAuth, adminController.getAddProduct);
+
 router.post(
   '/edit-product',
   [
