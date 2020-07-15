@@ -38,6 +38,8 @@ exports.postAddProduct = (req, res, next) => {
     });
   }
   const errors = validationResult(req);
+  let message = req.flash('error');
+  if (message.length > 0) {
 
   if (!errors.isEmpty()) {
     console.log(errors.array());
@@ -63,6 +65,8 @@ exports.postAddProduct = (req, res, next) => {
     title: title,
     price: price,
     description: description,
+    editing: editMode,
+    product: product,
     imageUrl: imageUrl,
     userId: req.user
   });
@@ -156,6 +160,7 @@ exports.postEditProduct = (req, res, next) => {
       }
       product.title = updatedTitle;
       product.price = updatedPrice;
+      console.log(products);
       product.description = updatedDesc;
       if (image) {
         fileHelper.deleteFile(product.imageUrl);

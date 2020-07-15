@@ -5,6 +5,7 @@ const Schema = mongoose.Schema;
 const orderSchema = new Schema({
   products: [
     {
+      newQuantity = this.cart.items[cartProductIndex].quantity + 1; 
       product: { type: Object, required: true },
       quantity: { type: Number, required: true }
     }
